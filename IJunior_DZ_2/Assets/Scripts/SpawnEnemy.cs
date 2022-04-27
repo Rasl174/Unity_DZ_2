@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class SpawnEnemy : MonoBehaviour
 {
-    [SerializeField] private int _timeWait;
+    private const string _spawn = nameof(Spawn);
     public GameObject Enemy;
 
     private void Update()
     {
-        if (IsInvoking("Spawn") == false)
+        if (IsInvoking(_spawn) == false)
         {
-            Invoke("Spawn", 2);
+            Invoke(_spawn, 2);
         }
     }
 
